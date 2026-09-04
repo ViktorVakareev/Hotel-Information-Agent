@@ -1,0 +1,98 @@
+<svg width="1160" height="540" viewBox="0 0 1160 540" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#444"/>
+    </marker>
+    <marker id="arrowPurple" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#6B21A8"/>
+    </marker>
+  </defs>
+
+  <rect width="1160" height="540" fill="#FFFFFF"/>
+
+  <text x="580" y="28" text-anchor="middle" font-size="19" font-weight="700" fill="#1F2937">How a Request Flows Through the Hotel Information Agent</text>
+  <text x="580" y="48" text-anchor="middle" font-size="13" fill="#6B7280">Example: guest asks "What time is checkout?"</text>
+
+  <!-- Row of 6 boxes -->
+  <!-- Box 1: User -->
+  <g>
+    <rect x="20" y="75" width="150" height="90" rx="8" fill="#EAF1FB" stroke="#2C5AA0" stroke-width="1.5"/>
+    <circle cx="34" cy="89" r="10" fill="#2C5AA0"/>
+    <text x="34" y="93" text-anchor="middle" font-size="11" fill="#FFFFFF" font-weight="700">1</text>
+    <text x="95" y="112" text-anchor="middle" font-size="13" font-weight="600" fill="#1F2937">Guest</text>
+    <text x="95" y="130" text-anchor="middle" font-size="11" fill="#374151">Types: "What time</text>
+    <text x="95" y="144" text-anchor="middle" font-size="11" fill="#374151">is checkout?"</text>
+  </g>
+
+  <!-- Box 2: Application -->
+  <g>
+    <rect x="210" y="75" width="150" height="90" rx="8" fill="#EAF1FB" stroke="#2C5AA0" stroke-width="1.5"/>
+    <circle cx="224" cy="89" r="10" fill="#2C5AA0"/>
+    <text x="224" y="93" text-anchor="middle" font-size="11" fill="#FFFFFF" font-weight="700">2</text>
+    <text x="285" y="112" text-anchor="middle" font-size="13" font-weight="600" fill="#1F2937">Application</text>
+    <text x="285" y="130" text-anchor="middle" font-size="11" fill="#374151">Packages JSON:</text>
+    <text x="285" y="144" text-anchor="middle" font-size="10.5" fill="#374151" font-family="Consolas, monospace">{role:"user", content}</text>
+  </g>
+
+  <!-- Box 3: API Endpoint -->
+  <g>
+    <rect x="400" y="75" width="150" height="90" rx="8" fill="#FDF3E7" stroke="#B7791F" stroke-width="1.5"/>
+    <circle cx="414" cy="89" r="10" fill="#B7791F"/>
+    <text x="414" y="93" text-anchor="middle" font-size="11" fill="#FFFFFF" font-weight="700">3</text>
+    <text x="475" y="112" text-anchor="middle" font-size="13" font-weight="600" fill="#1F2937">API Endpoint</text>
+    <text x="475" y="130" text-anchor="middle" font-size="11" fill="#374151">POST + Auth header</text>
+    <text x="475" y="144" text-anchor="middle" font-size="10.5" fill="#374151" font-family="Consolas, monospace">Bearer &lt;API_KEY&gt;</text>
+  </g>
+
+  <!-- Box 4: Perception -->
+  <g>
+    <rect x="590" y="75" width="150" height="90" rx="8" fill="#EAF7EE" stroke="#2E7D32" stroke-width="1.5"/>
+    <circle cx="604" cy="89" r="10" fill="#2E7D32"/>
+    <text x="604" y="93" text-anchor="middle" font-size="11" fill="#FFFFFF" font-weight="700">4</text>
+    <text x="665" y="112" text-anchor="middle" font-size="13" font-weight="600" fill="#1F2937">Perception</text>
+    <text x="665" y="130" text-anchor="middle" font-size="11" fill="#374151">Agent reads the</text>
+    <text x="665" y="144" text-anchor="middle" font-size="11" fill="#374151">role + content</text>
+  </g>
+
+  <!-- Box 5: Reasoning -->
+  <g>
+    <rect x="780" y="75" width="150" height="90" rx="8" fill="#EAF7EE" stroke="#2E7D32" stroke-width="1.5"/>
+    <circle cx="794" cy="89" r="10" fill="#2E7D32"/>
+    <text x="794" y="93" text-anchor="middle" font-size="11" fill="#FFFFFF" font-weight="700">5</text>
+    <text x="855" y="112" text-anchor="middle" font-size="13" font-weight="600" fill="#1F2937">Reasoning</text>
+    <text x="855" y="130" text-anchor="middle" font-size="11" fill="#374151">Applies system prompt,</text>
+    <text x="855" y="144" text-anchor="middle" font-size="11" fill="#374151">searches knowledge base</text>
+  </g>
+
+  <!-- Box 6: Action -->
+  <g>
+    <rect x="970" y="75" width="150" height="90" rx="8" fill="#EAF7EE" stroke="#2E7D32" stroke-width="1.5"/>
+    <circle cx="984" cy="89" r="10" fill="#2E7D32"/>
+    <text x="984" y="93" text-anchor="middle" font-size="11" fill="#FFFFFF" font-weight="700">6</text>
+    <text x="1045" y="112" text-anchor="middle" font-size="13" font-weight="600" fill="#1F2937">Action</text>
+    <text x="1045" y="130" text-anchor="middle" font-size="11" fill="#374151">Generates answer,</text>
+    <text x="1045" y="144" text-anchor="middle" font-size="11" fill="#374151">packages as JSON</text>
+  </g>
+
+  <!-- Forward arrows -->
+  <line x1="170" y1="120" x2="205" y2="120" stroke="#444" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <line x1="360" y1="120" x2="395" y2="120" stroke="#444" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <line x1="550" y1="120" x2="585" y2="120" stroke="#444" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <line x1="740" y1="120" x2="775" y2="120" stroke="#444" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <line x1="930" y1="120" x2="965" y2="120" stroke="#444" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+  <!-- Knowledge Base box, linked to Reasoning -->
+  <rect x="780" y="235" width="150" height="70" rx="8" fill="#F5EEFC" stroke="#6B21A8" stroke-width="1.5" stroke-dasharray="5,4"/>
+  <text x="855" y="264" text-anchor="middle" font-size="13" font-weight="600" fill="#4C1D7A">Knowledge Base</text>
+  <text x="855" y="282" text-anchor="middle" font-size="11" fill="#4C1D7A">(uploaded hotel docs)</text>
+  <line x1="855" y1="235" x2="855" y2="168" stroke="#6B21A8" stroke-width="1.6" stroke-dasharray="5,4" marker-end="url(#arrowPurple)"/>
+  <text x="875" y="205" font-size="10.5" fill="#6B21A8">if connected</text>
+
+  <!-- Return path -->
+  <path d="M 1045 165 L 1045 440 L 95 440 L 95 168" fill="none" stroke="#444" stroke-width="1.6" stroke-dasharray="2,3" marker-end="url(#arrow)"/>
+  <rect x="330" y="452" width="500" height="42" rx="6" fill="#FFF7ED" stroke="#B7791F" stroke-width="1"/>
+  <text x="580" y="469" text-anchor="middle" font-size="11.5" fill="#1F2937" font-weight="600">Response returns as JSON {role: "assistant", content: "Checkout is at 11 AM..."}</text>
+  <text x="580" y="485" text-anchor="middle" font-size="11" fill="#374151">via the same API endpoint → Application displays the answer to the guest</text>
+
+  <text x="580" y="525" text-anchor="middle" font-size="10.5" fill="#9CA3AF">Six-step request/response cycle — full description in the README alt text.</text>
+</svg>
